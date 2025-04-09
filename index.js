@@ -169,3 +169,6 @@ function retorn_a_seccio() {
         document.getElementById("seccio_3").style.display = "flex";
     }
 }
+if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
+    omple_llista();
+}
