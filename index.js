@@ -1,3 +1,7 @@
+let validat = false;    // variable que permet saber si hi ha algun usuari validat
+let nom, contrasenya;
+let scriptURL = "https://script.google.com/macros/s/AKfycbxiqBj-711vOXsrx-lt3JZYmnrqabYw0iT8r9mgUkIHcN2aS6raIGGOzhSTOJDZlMb18A/exec"    // s'ha de substituir la cadena de text per la URL del script
+
 function canvia_seccio(num_boto) {
     const menu = document.getElementById("menu");
     const num_botons = menu.children.length;    // el nombre de botons dins de l'element "menu"
@@ -16,10 +20,6 @@ function canvia_seccio(num_boto) {
         }
     }
 }
-
-let validat = false;    // variable que permet saber si hi ha algun usuari validat
-let nom, contrasenya;
-let scriptURL = "https://script.google.com/macros/s/AKfycbxiqBj-711vOXsrx-lt3JZYmnrqabYw0iT8r9mgUkIHcN2aS6raIGGOzhSTOJDZlMb18A/exec"    // s'ha de substituir la cadena de text per la URL del script
 
 function inici_sessio() {
     nom = document.getElementById("nom_usuari").value;    // la propietat "value" d'un quadre de text correspon al text escrit per l'usuari
@@ -207,4 +207,16 @@ function esborra_foto(id) {
 
 if (num_boto == 4) {
     mapa.invalidateSize();
+}
+
+let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista on cada element és una llista amb els valors de latitud, longitud i nom de vegueria com a elements
+                 [42.17, 0.89, "Alt Pirineu i Aran (Tremp)"],
+                 [41.12, 1.24, "Camp de Tarragona (Tarragona)"],
+                 [41.73, 1.83 ,"Comarques centrals (Manresa)"],
+                 [41.98, 2.82, "Comarques gironines (Girona)"],
+                 [41.62, 0.62, "Ponent (Lleida)"],
+                 [40.81, 0.52, "Terres de l'Ebre (Tortosa)"],
+                 [41.35, 1.70, "Penedès (Vilafranca del Penedès"]];
+for (i in vegueries) {    // per cada element de la llista
+    L.marker([vegueries[i][0], vegueries[i][1]],{title:vegueries[i][2]}).addTo(mapa);
 }
