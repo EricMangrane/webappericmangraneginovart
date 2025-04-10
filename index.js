@@ -221,6 +221,10 @@ for (i in vegueries) {    // per cada element de la llista
     L.marker([vegueries[i][0], vegueries[i][1]],{title:vegueries[i][2]}).addTo(mapa);
 }
 
+mapa = L.map("seccio_4").setView([41.72, 1.82], 8);    // assigna el mapa a la secció, centrat en el punt i amb el nivell de zoom
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {    // capa d'OpenStreetMap
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'    // autoria de la capa
+}).addTo(mapa);    // s'afegeix la capa al mapa
 
 L.marker([41.39, 2.17], {title:"Barcelona"}).addTo(mapa);    // l'opció "title" fa que es mostri el text "Barcelona" quan es passa el ratolí sobre el marcador
 
