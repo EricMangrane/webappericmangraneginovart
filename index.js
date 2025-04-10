@@ -204,3 +204,7 @@ function esborra_foto(id) {
         };
     }
 }
+
+if (num_boto == 4) {
+    mapa.invalidateSize();
+}
