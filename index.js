@@ -211,6 +211,9 @@ function esborra_foto(id) {
 
 if (num_boto == 4) {
     mapa.invalidateSize();
+    if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu
+        navigator.geolocation.watchPosition(geoExit);    // inicia el seguiment de la localització del dispositiu
+    }
 }
 
 let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista on cada element és una llista amb els valors de latitud, longitud i nom de vegueria com a elements
@@ -239,12 +242,6 @@ for (i in vegueries) {    // per cada element de la llista
     L.marker([vegueries[i][0], vegueries[i][1]],{title:vegueries[i][2]}).addTo(mapa);
 }
 
-if (num_boto == 4) {
-    mapa.invalidateSize();
-    if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu
-        navigator.geolocation.watchPosition(geoExit);    // inicia el seguiment de la localització del dispositiu
-    }
-}
 
 function geoExit(posicio){
     let latitud = posicio.coords.latitude;
