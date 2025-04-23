@@ -96,6 +96,14 @@ function tanca_sessio() {
 }
 
 window.onload = () => { 
+    let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista on cada element és una llista amb els valors de latitud, longitud i nom de vegueria com a elements
+                 [42.17, 0.89, "Alt Pirineu i Aran (Tremp)"],
+                 [41.12, 1.24, "Camp de Tarragona (Tarragona)"],
+                 [41.73, 1.83 ,"Comarques centrals (Manresa)"],
+                 [41.98, 2.82, "Comarques gironines (Girona)"],
+                 [41.62, 0.62, "Ponent (Lleida)"],
+                 [40.81, 0.52, "Terres de l'Ebre (Tortosa)"],
+                 [41.35, 1.70, "Penedès (Vilafranca del Penedès"]];
     let base_de_dades = storage.getItem("base_de_dades");   
     if(base_de_dades == null) {
         indexedDB.open("Dades").onupgradeneeded = event => {   
@@ -214,14 +222,6 @@ function esborra_foto(id) {
     }
 }
 
-let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista on cada element és una llista amb els valors de latitud, longitud i nom de vegueria com a elements
-                 [42.17, 0.89, "Alt Pirineu i Aran (Tremp)"],
-                 [41.12, 1.24, "Camp de Tarragona (Tarragona)"],
-                 [41.73, 1.83 ,"Comarques centrals (Manresa)"],
-                 [41.98, 2.82, "Comarques gironines (Girona)"],
-                 [41.62, 0.62, "Ponent (Lleida)"],
-                 [40.81, 0.52, "Terres de l'Ebre (Tortosa)"],
-                 [41.35, 1.70, "Penedès (Vilafranca del Penedès"]];
 for (i in vegueries) {    // per cada element de la llista
     L.marker([vegueries[i][0], vegueries[i][1]],{title:vegueries[i][2]}).addTo(mapa);
 }
@@ -250,3 +250,16 @@ function geoExit(posicio){
         geoID.setLatLng([latitud, longitud]);    // actualització de la posició del marcador d'usuari en el mapa
     }
 }
+
+let pixels = 24;    // nombre de píxels de la forma
+let mida = 2 * pixels;    // mida de visualització en el mapa
+let ref_vertical = mida / 2;    // distància vertical des del punt superior de la icona fins al punt de la localització
+let color = "yellow";
+let path = "M12,1C10.89,1 10,1.9 10,3C10,4.11 10.89,5 12,5C13.11,5 14,4.11 14,3A2,2 0 0,0 12,1M10,6C9.73,6 9.5,6.11 9.31,6.28H9.3L4,11.59L5.42,13L9,9.41V22H11V15H13V22H15V9.41L18.58,13L20,11.59L14.7,6.28C14.5,6.11 14.27,6 14,6";    // cadena de text de la forma
+let cadenaSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + pixels + ' ' + pixels + '"><path d="' + path + '" fill="' + color + '" /></svg>';    // construcció de l'element SVG
+let icona = encodeURI("data:image/svg+xml," + cadenaSVG);    // codificació d'espais i caràcters especials per formar una URL vàlida
+let icon = L.icon({    // propietats de la icona
+    iconUrl: icona,    // URL de la forma
+    iconSize: [mida, mida],    // mida de la icona
+    iconAnchor: [mida / 2, ref_vertical]    // distàncies (horitzontal i vertical) des del punt superior esquerre de la icona fins al punt de localització
+}); 
