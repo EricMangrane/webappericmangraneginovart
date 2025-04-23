@@ -21,6 +21,17 @@ function canvia_seccio(num_boto) {
     }
 }
 
+if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
+    omple_llista();
+}
+
+if (num_boto == 4) {
+    mapa.invalidateSize();
+    if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu
+        navigator.geolocation.watchPosition(geoExit);    // inicia el seguiment de la localització del dispositiu
+    }
+}
+
 function inici_sessio() {
     nom = document.getElementById("nom_usuari").value;    // la propietat "value" d'un quadre de text correspon al text escrit per l'usuari
     contrasenya = document.getElementById("contrasenya").value;
@@ -170,9 +181,6 @@ function retorn_a_seccio() {
         document.getElementById("seccio_3").style.display = "flex";
     }
 }
-if (num_boto == 3) {    // si es prem el botó de la secció "Galeria"
-    omple_llista();
-}
 
 function omple_llista() {
     let llista = '';
@@ -203,13 +211,6 @@ function esborra_foto(id) {
                 canvia_seccio(3);    // es recarrega la galeria per tal que ja no mostri la foto esborrada
             };
         };
-    }
-}
-
-if (num_boto == 4) {
-    mapa.invalidateSize();
-    if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu
-        navigator.geolocation.watchPosition(geoExit);    // inicia el seguiment de la localització del dispositiu
     }
 }
 
