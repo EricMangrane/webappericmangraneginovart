@@ -259,10 +259,6 @@ function geoExit(posicio){
     }
 }
 
-for (i in vegueries) {    // per cada element de la llista
-    L.marker([vegueries[i][0], vegueries[i][1]],{title:vegueries[i][2]}).addTo(mapa);
-}
-
 function geoExit(posicio){
     let latitud = posicio.coords.latitude;
     let longitud = posicio.coords.longitude;
