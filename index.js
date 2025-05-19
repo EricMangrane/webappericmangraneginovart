@@ -244,7 +244,7 @@ function geoExit(posicio){
     let mida = 2 * pixels;    // mida de visualització en el mapa
     let ref_vertical = mida / 2;    // distància vertical des del punt superior de la icona fins al punt de la localització
     let color = "red";
-    let path = "M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z";    // cadena de text de la forma
+    let path = "M12 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5-4h2v.4c-.1 2.2-.8 3.9-2.3 5.1-.5.4-1.1.7-1.7.9V22h-2v-6h-2v6H9V10.1c-.3.1-.5.2-.6.3-.9.7-1.39 1.6-1.4 3.1v.5H5v-.5c0-2 .71-3.59 2.11-4.79C8.21 7.81 10 7 12 7s2.68-.46 3.48-1.06C16.48 5.14 17 4 17 2.5V2zM4 16h3v6H4v-6z";    // cadena de text de la forma
     let cadenaSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + pixels + ' ' + pixels + '"><path d="' + path + '" fill="' + color + '" /></svg>';    // construcció de l'element SVG
     let icona = encodeURI("data:image/svg+xml," + cadenaSVG);    // codificació d'espais i caràcters especials per formar una URL vàlida
     let icon = L.icon({    // propietats de la icona
