@@ -322,7 +322,8 @@ function mostra_diagrama() {
         canvas_creat = true;
     } 
 }
-//--------------------------------------------------------------------
+
+
 function peticio() {
     const canal = "2897205";    // s'han de substituir els asteriscs pel codi del canal
     const camp = "1";    // el camp 1 (nivell de llum)
