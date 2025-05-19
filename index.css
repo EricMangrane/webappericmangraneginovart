@@ -79,7 +79,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #950E17;
+    background-color: #316d00c7;
     font-size: 5vmax;
     cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
 }
@@ -142,7 +142,7 @@ body {
 }
 #icona_camera {
     font-size: 40vmin;
-    color: #950E17;
+    color: #316d00c7;
 }
 #foto {
     max-width: 60vmin;    /* dimensions màximes per a la prveisualització de les fotos */
@@ -192,7 +192,7 @@ body {
 }
 #llista_titol i {
     font-size: 4vmax;
-    color:#950E17;
+    color:#ffffff;
 }
 #llista_titol i:nth-child(1) {    /* primer <i> (miniatura de la foto) */
     flex: 2;
@@ -234,25 +234,15 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-    #div_diagrama {
+}
+#div_diagrama {
         width: 80vmin;
         font-size: 5vh;   
         text-align: center;
-    }
-    #div_valor {
-        font-size: 15vh; 
-        margin-top: 5vh;  
-    }
-
-#div_diagrama {
-    width: 80vmin;
-    font-size: 5vh;   
-    text-align: center;
 }
 #div_valor {
-    font-size: 15vh; 
-    margin-top: 5vh;  
+        font-size: 15vh; 
+        margin-top: 5vh;  
 }
 
 .llista_fila {
