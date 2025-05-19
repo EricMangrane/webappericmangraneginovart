@@ -9,7 +9,7 @@ body {
     min-height: 100svh;    /* per a navegadors on la declaració anterior no és precisa */
     min-height: -webkit-fill-available;    
     margin: 0px;    /* elimina tots els marges del document */
-    font-family: "Underdog";    /* un tipus de lletra adient per a llocs web */
+    font-family: sans-serif;    /* un tipus de lletra adient per a llocs web */
     background-color: #71df0b;    /* color de fons en format #RRGGBB */
 }
 .underdog-regular {
@@ -83,7 +83,7 @@ body {
     display: flex;    /* contenidor flex on centrar-hi la icona */
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(188, 255, 179);
     background-color: #316d00c7;
     font-size: 5vmax;
     cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
