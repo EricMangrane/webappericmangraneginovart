@@ -83,7 +83,7 @@ body {
     display: flex;    /* contenidor flex on centrar-hi la icona */
     justify-content: center;
     align-items: center;
-    color: rgb(188, 255, 179);
+    color: #bcffb3;
     background-color: #316d00c7;
     font-size: 5vmax;
     cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
