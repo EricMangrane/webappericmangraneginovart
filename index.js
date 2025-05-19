@@ -313,7 +313,7 @@ function mostra_diagrama() {
                         {
                             data : valors[1],    // valors mesurats
                             label : "Nivell de llum",    // títol del diagrama
-                            borderColor : "blue",    // color de la línia
+                            borderColor : "red",    // color de la línia
                         }]
             },
         });
